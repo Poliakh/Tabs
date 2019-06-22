@@ -1,6 +1,113 @@
 body{
-	background-color: bisque
+	// background-color: #292C34;
+	background-color: #22252B;
 }
-h1{
-	color: aquamarine
+$tabActive: #292C34;
+$fieldActiv:#292C34;
+$tab: #22252B;
+$border: rgba(204, 204, 204, 0.363);
+
+*{
+	color:#ACB2BF;
+}
+.tabs {
+	width: 100%;
+	min-height: 220px;
+}
+.tabsMenu,
+.tabsMenu__item {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.tabs,
+.tabsMenu__input[type="radio"]:checked + label {
+	position: relative;
+}
+.tabsMenu__item,
+.tabsMenu__input[type="radio"] + label {
+	display: inline-block;
+}
+.tabsMenu__item > div,
+.tabsMenu__input[type="radio"] {
+	position: absolute;
+}
+.tabsMenu__item > div,
+.tabsMenu__input[type="radio"] + label {
+	border: solid 1px rgba(204, 204, 204, 0.363);
+}
+.tabs {
+font: normal 11px Arial, Sans-serif;
+	// color: #404040;
+}
+.tabsMenu__item {
+	vertical-align: top;
+}
+.tabsMenu__item:first-child {
+margin-left: 8px;
+}
+.tabsMenu__item > div {
+	height: fit-content;
+	top: 33px;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 8px;
+	// overflow: auto;
+	background: $fieldActiv;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.tabsMenu__input[type="radio"] + label {
+	margin: 0 2px 0 0;
+	padding: 0 18px;
+	line-height: 32px;
+	background: $tab;
+	text-align: center;
+	border-radius: 5px 5px 0 0;
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.tabsMenu__input[type="radio"]:checked + label {
+	z-index: 1;
+	background:$tabActive;
+	border-bottom-color: rgba(204, 204, 204, 0);
+	cursor: default;
+}
+.tabsMenu__input[type="radio"] {
+	opacity: 0;
+}
+.tabsMenu__input[type="radio"] ~ div {
+	display: none;
+}
+.tabsMenu__input[type="radio"]:checked:not(:disabled) ~ div {
+	display: block;
+}
+.tabsMenu__input[type="radio"]:disabled + label {
+	opacity: .5;
+	cursor: no-drop;
+}
+
+.sourceLink{
+	max-width: fit-content;
+	margin-left: auto;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	margin-top: 10px;
+
+	&__link{
+		text-decoration: none;
+		// color: rgb(78, 81, 253);
+		&:hover{
+			color:rgb(78, 81, 253)*1.8;
+			border-bottom: 1px solid rgb(78, 81, 253)*1.8;
+		}
+	}
+}
+.code{
+	display: block;
+	margin-top: 20px;
 }
